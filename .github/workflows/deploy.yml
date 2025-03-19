@@ -18,7 +18,8 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        # package-lock.jsonがない場合でも動作するようにnpm installを使用
+        run: npm install
 
       - name: Build
         run: npm run build
